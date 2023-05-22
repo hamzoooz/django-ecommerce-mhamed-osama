@@ -159,8 +159,11 @@ $('.addwishlist').click(function (e) {
     var owl = $('.owl-carousel');
     owl.owlCarousel({
         loop: true,
-        nav: true,
-        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        // nav: true,
+        margin: 30,
         responsive: {
             0: {
                 items: 1

@@ -9,12 +9,15 @@ from . models import Product , Category , Whatsapp
 
 def index(reqeust):
     trending_product = Product.objects.filter(trending=1)
+    # last_product = Product.objects.filter(status=0).last()
+    last_product = Product.objects.all().order_by('-id')[:10]
+    # best_product = Product.objects.get(trending=1)
     whatsapp = Whatsapp.objects.all().first()
     
     # url = Produc.objects.get()
     
     # context = {"trending_product": trending_product, "whatsapp": whatsapp,"url":url}
-    context = {"trending_product": trending_product, "whatsapp": whatsapp}
+    context = {"trending_product": trending_product,"last_product":last_product, "whatsapp": whatsapp}
     return render(reqeust, 'store/index.html',context)
 
 
