@@ -1,1 +1,1 @@
-# django-ecommerce-mhamed-osama
+# Django-eCommerce

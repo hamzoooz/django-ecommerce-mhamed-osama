@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link rel="steylesheet" href="{% static 'assets/css/all.min.css' %}" />
+    {% comment %} <link rel="steylesheet" href="{% static 'assets/css/owl.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="steylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+  
+    <!-- owl carousel theme.css link -->
+    {% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">   {% endcomment %}
+
+    
+
+    {% comment %}
+    <link rel="steylesheet" href="{% static 'assets/css/alertify.min.css' %}" />
+    {% endcomment %} {% comment %}
+    <link rel="steylesheet" href="{% static 'assets/css/themes/default.min.css' %}" />
+    {% endcomment %} {% comment %}
+    <link rel="steylesheet" href="{% static 'assets/css/themes/bootstrap.min.css' %}" />
+    {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets/alertify/css/alertify.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/alertify/css/themes/default.min.css' %}" />
+    {% comment %} <link rel="stylesheet" href="{% static 'assets/owl-carusel/owl-carousel/owl.carousel.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/owl-carusel/owl-carousel/owl.theme.css' %}" /> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'assets/jquery-ui-1.13.2/jquery-ui.min.css' %}" />
+    
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+    <!-- CSS -->
+    {% comment %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    {% endcomment %}
+    <!-- Default theme -->
+    {% comment %}
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+    <meta rel="referrer"  content="no-referrer-when-downgrat" >
+    {% endcomment %}
+    <title>{% block title %} Home {% endblock title %}</title>
+</head>
+
+<body>
+    {% include 'template-parts/nav.html' %} 
+    {% block content %} {% comment %}
+    Here The Content {% endcomment %} 
+    {% endblock content %}
+
+    <script src="{% static 'assets/js/jquery-3.6.0.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/all.min.js' %}"></script>
+    <script src="{% static 'assets/alertify/alertify.js' %}"></script>
+    <script src="{% static 'assets/jquery-ui-1.13.2/jquery-ui.min.js' %}"></script>
+
+    {% comment %} <script src="{% static 'assets/owl-carusel/owl-carousel/owl.carousel.min.js' %}"></script> {% endcomment %}
+    
+    <script src="{% static 'assets/js/main.js' %}"></script>
+    {% comment %}
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    {% endcomment %}
+    <script>
+        $(function () {
+            var availableTags = [];
+
+            $.ajax({
+                method: "GET",
+                url: "/procced-list",
+                success: function (response) {
+                    startAutocomplet(response);
+                },
+            });
+            function startAutocomplet(availableTags) {
+                $("#searchproduct").autocomplete({
+                    source: availableTags,
+                });
+            }
+        });
+    </script>
+
+    
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6469eb1374285f0ec46cb6f6/1h0urshjn';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <script>
+        alertify.set('notifier', 'position', 'top-right');
+        {% for msg in messages %}
+        alertify.success('{{ msg }}');
+        {% endfor %}
+        {% comment %} alertify.success('hello'); {% endcomment %}
+    </script>
+
+    {% block scripts %} {% endblock scripts %} {% comment %}
+    <script src="{% static 'assets/js/checkout.js.js' %}"></script>
+    {% endcomment %}
+    <script src="{% static 'assets/js/checkout.js' %}"></script>
+    <script src="{% static 'assets/js/sweetalert.min.js' %}"></script>
+    <!-- owl carousel js file -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> {% endcomment %}
+</body>
+
+</html>
+{% comment %}
+https://marketplace.visualstudio.com/_apis/public/gallery/publishers/AndersEAndersen/vsextensions/html-class-suggestions/1.2.1/vspackage
+{% endcomment %} {% comment %}
+https://marketplace.visualstudio.com/_apis/public/gallery/publishers/AESSoft/vsextensions/aessoft-class-autocomplete/0.1.0/vspackage
+{% endcomment %}
