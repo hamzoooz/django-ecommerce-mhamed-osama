@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load  static %}
+
 {% block content %}
 
 {% include 'template-parts/slider.html' %}
@@ -47,8 +48,6 @@
     </div><!-- ./trending_product  -->
 </div><!-- ./container  -->
 
-
-
 <div class="container" >
     <div class="trending_product">
         <h1 class="py-5" > Recent Added    </h1><hr>
@@ -91,8 +90,6 @@
         </div><!-- ./owl-carousel owl-theme  -->
     </div><!-- ./trending_product  -->
 </div><!-- ./container  -->
-
-
 
 <div class="container" >
     <div class="trending_product">
@@ -137,18 +134,23 @@
     </div><!-- ./trending_product  -->
 </div><!-- ./container  -->
 
-
-
-
-
 {% if whatsapp.status %}
-
 <a href="https://wa.me/{{whatsapp.number}}?text={{ whatsapp.message|urlize }}" class="whatsapp-chat"  style="position: fixed; bottom: 11px;" >
-  <img src="{{ whatsapp.icon.url  }}" alt="whatsapp-chat icon " width="{{whatsapp.width}}px" height="{{whatsapp.height}}px" srcset="" >
-</a> {% endif %}
+  <div class="whatsapp-chat" style="
+    background-image: url('{{ whatsapp.icon.url  }}');
+    z-index: 99;
+    background-size: contain;
+    position: sticky;
+    border-radius: 50%;
+    border: 5px #ddd solid;
+    width: 70px;
+    height: 70px;
+    " ></div>
+</a> 
+{% endif %}
 
-{% endblock content %}
+{% endblock content  %}
 
-{% block scripts %}
+{% block scripts %}{% endblock scripts %}
 
-{% endblock scripts %}
+

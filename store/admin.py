@@ -11,6 +11,7 @@ admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(Profile)
 admin.site.register(Whatsapp)
+admin.site.register(CarouselImage)
 
 
 # @admin.register(Product)

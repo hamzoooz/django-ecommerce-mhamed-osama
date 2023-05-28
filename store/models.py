@@ -154,4 +154,11 @@ class Whatsapp(models.Model):
         return self.message
         # return self.message[0:10]
 
+class CarouselImage(models.Model):
+    title = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='carousel')
+    caption = models.CharField(max_length=200)
 
+    def __str__(self):
+        return f"{self.title} {self.caption}"
+        # return self.message[0:10]

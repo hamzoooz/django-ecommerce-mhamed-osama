@@ -21,3 +21,26 @@ a{
     margin: 3px;
     box-shadow: 2px 2px 2px 3px #acaaaa;
 }
+
+/* 
+.btn.btn-primary a {
+  font-size: 10px !important;
+  font-weight: bolder;
+} */
+
+
+html.fontawesome-i2svg-active.fontawesome-i2svg-complete body div.container div.trending_product div.owl-carousel.owl-theme.owl-loaded.owl-drag div.owl-stage-outer div.owl-stage div.owl-item.active div.item div.card.shadow div.card-body div.row {
+  font-size: 10px !important;
+  font-weight: bolder;
+}
+
+
+/* to make carousel anmite thomthe  */
+/* .carousel-item {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+} */
